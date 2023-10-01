@@ -8,6 +8,15 @@ return require('packer').startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
+	use "nvim-lua/popup.nvim"
+	use "nvim-lua/plenary.nvim"
+	use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+	use "kyazdani42/nvim-web-devicons"
+
+	use {
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true }
+	}
 
 	use({
 		"ellisonleao/gruvbox.nvim",
@@ -23,6 +32,10 @@ return require('packer').startup(function(use)
 	use "tpope/vim-rhubarb"
 	use "tpope/vim-surround"
 	use "tpope/vim-repeat"
+
+	use "nvim-treesitter/nvim-treesitter-context"
+	use { "terrortylor/nvim-comment" }
+	require('nvim_comment').setup()
 
 	use {
 		"alexghergh/nvim-tmux-navigation",
@@ -60,6 +73,17 @@ return require('packer').startup(function(use)
 	}
 
 	use "wuelnerdotexe/vim-astro"
+
+	use {
+		"klen/nvim-test",
+		config = function()
+			require('nvim-test').setup()
+		end
+	}
+	require("nvim-test").setup {
+		silent = true
+	}
+
 	use { "zbirenbaum/copilot.lua" }
 	use {
 		"zbirenbaum/copilot-cmp",
@@ -72,4 +96,11 @@ return require('packer').startup(function(use)
 			require("copilot_cmp").setup()
 		end
 	}
+
+	 -- Ruby
+    use "tpope/vim-bundler"
+    use "tpope/vim-rails"
+
+	-- Astro
+    use "wuelnerdotexe/vim-astro"
 end)
