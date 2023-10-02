@@ -57,6 +57,7 @@ alias gd="git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^ref
 alias ghpr="gh pr create --web"
 alias gb="git checkout -b"
 alias br="~/Documents/GitHub/tcop-cli/bin/run"
+alias p8 = "ping 8.8.8.8"
 # alias tcop-cli="~/Documents/GitHub/tcop-cli/bin/run"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
